@@ -5,9 +5,14 @@
 </head>
 <body>
     <div>
-        <h3>First Post</h3>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <i>10/2/15</i>
+        <h2><a href="/">Django Girls Blog</a></h2>
     </div>
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.text|linebreaks }}</p>
+        </div>
+    {% endfor %}
 </body>
 </html>
