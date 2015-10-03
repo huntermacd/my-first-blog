@@ -12,6 +12,9 @@
 <body>
     <div>
         <h2><a href="/">Django Girls Blog</a></h2>
+        {% if user.is_authenticated %}
+            <a href="{% url "post_new" %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        {% endif %}
     </div>
     {% block content %}{% endblock content %}
 </body>
